@@ -1,0 +1,22 @@
+name: iosurl
+description: A new Flutter project.
+
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.1
+  url_launcher: ^5.7.10
+  url_launcher_web: ^0.1.5+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
