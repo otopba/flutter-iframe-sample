@@ -28,20 +28,27 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool _clicked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SizedBox(
-          width: 200,
-          height: 200,
-          child: FlatButton(
-            color: Colors.yellow,
-            child: Center(
-              child: Text("Open https://google.com"),
+        child: Row(
+          children: [
+            Text("clicked = $_clicked"),
+            SizedBox(
+              width: 200,
+              height: 200,
+              child: FlatButton(
+                color: Colors.yellow,
+                child: Center(
+                  child: Text("Open https://google.com"),
+                ),
+                onPressed: _openUrl,
+              ),
             ),
-            onPressed: _openUrl,
-          ),
+          ],
         ),
       ),
     );
@@ -49,6 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<bool> _openUrl() async {
     print("Click");
+    setState(() {
+      _clicked = true;
+    });
     final url = "https://www.google.com/";
     if (await canLaunch(url)) {
       final success = await launch(url, webOnlyWindowName: "_blank");
