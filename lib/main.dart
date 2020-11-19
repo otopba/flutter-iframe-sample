@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SizedBox(
           width: 200,
           height: 200,
-          child: RaisedButton(
+          child: FlatButton(
             color: Colors.yellow,
             child: Center(
               child: Text("Open https://google.com"),
